@@ -1,6 +1,6 @@
 // import express
 const express = require('express')
-const userController = require('../controllers/UserController')
+const userController = require('../controllers/userController')
 const auth = require('../middleware/auth')
 const user = require('../models/user')
 
