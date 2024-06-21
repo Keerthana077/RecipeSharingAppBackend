@@ -20,7 +20,9 @@ userRouter.post('/recipe',auth.verifyToken,userController.createRecipe)
 userRouter.get('/allRecipes',auth.verifyToken,userController.getRecipe)
 userRouter.get('/myRecipes',auth.verifyToken,userController.getMyRecipes)
 userRouter.put('/recipe/:id',auth.verifyToken,userController.updateRecipe)
+userRouter.put('/review/:id',auth.verifyToken,userController.addRating_Comment)
 userRouter.delete('/recipe/:id',auth.verifyToken,userController.deleteRecipe)
+
 
 userRouter.get('/logout',auth.verifyToken,userController.logout)
 // export the router

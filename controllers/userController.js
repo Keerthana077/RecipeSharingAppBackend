@@ -115,8 +115,10 @@ const userController = {
             }
 
             // if user exists take data from request body
-            const {bio,location} = request.body
+            const {username,email,bio,location} = request.body
             // update the data
+            if(username)user.username=username
+            if(email)user.email=email
             if(bio)user.name = bio
             if(location)user.location = location
 
@@ -187,7 +189,7 @@ const userController = {
         } catch(error){
             response.status(500).json({message : error.message})
         }
-    },
+    }, 
     getRecipe : async(request,response) =>{
         try{
 
@@ -257,6 +259,34 @@ const userController = {
 
             // return the updated user
             response.json({ message: 'changes updated successfully', recipe : updatedData });
+
+        } catch(error){
+            response.status(500).json({message : error.message})
+        }
+        
+    },
+    addRating_Comment : async(request,response) => {
+        try{
+            // get the id from request.params
+            const {id}  = request.params
+            // get ratings from db
+            let myrecipe = await recipe.findById(id)
+
+            // get the user id from request object
+            const userId = request.userId
+
+            // get the data from req.body
+            const {ratings,user,comment}  =  request.body
+            var comments = {user:user,comment:comment}
+            // myrecipe.rating = (rating+myrecipe.rating)/2
+            myrecipe.comments.push(comments)
+            myrecipe.rating = Math.round((myrecipe.rating + ratings)/2)
+
+            // save the updated data to the database
+            await myrecipe.save()
+ 
+            // return the updated user
+            response.json({ message: 'changes updated successfully' });
 
         } catch(error){
             response.status(500).json({message : error.message})

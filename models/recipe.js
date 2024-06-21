@@ -21,6 +21,10 @@ const recipeSchema = mongoose.Schema({
         type : Number,
         default : 0
     },
+    comments : {
+        type : Array,
+        default : []
+    },
     createdBy : {
         type : mongoose.Schema.Types.ObjectId,
         ref : 'User'
