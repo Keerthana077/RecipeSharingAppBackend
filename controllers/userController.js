@@ -75,9 +75,9 @@ const userController = {
             // set a cookie with token
             response.cookie('token',token,{
                 httpOnly : true,
-                // sameSite : 'none',
+                sameSite : 'none',
                 expires : new Date(Date.now() + 24 * 60 * 60 * 1000), //24 hrs from now
-                // secure :true //enable 
+                secure :true //enable 
             })
 
             // return the response 
@@ -133,7 +133,7 @@ const userController = {
         try{
             // clear the token cookie
             response.clearCookie('token');
-            
+
             // get the user id from request object
             const userId = await request.userId
 
