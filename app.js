@@ -25,6 +25,7 @@ app.use(express.json())
 
 // define the endpoints
 app.use('/api/users',userRouter)
+app.get('/',(req,res)=>{res.send("welcome!!")})
 
 // export the app module
 module.exports = app
