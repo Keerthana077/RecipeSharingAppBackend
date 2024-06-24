@@ -5,7 +5,7 @@ const config = require('../utils/config');
 const recipe = require("../models/recipe");
 const { request, response } = require("../app");
 const userController = {
-    
+
     register : async(request,response) => {
         try{
             // get the user input from request body
@@ -120,7 +120,7 @@ const userController = {
             // update the data
             if(username)user.username=username
             if(email)user.email=email
-            if(bio)user.name = bio
+            if(bio)user.bio = bio
             if(location)user.location = location
 
             // save to db
