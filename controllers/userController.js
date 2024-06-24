@@ -5,6 +5,7 @@ const config = require('../utils/config');
 const recipe = require("../models/recipe");
 const { request, response } = require("../app");
 const userController = {
+    
     register : async(request,response) => {
         try{
             // get the user input from request body

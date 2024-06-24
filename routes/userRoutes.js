@@ -8,6 +8,7 @@ const userRouter =  express.Router()
 
 // define the endpoints
 // POST: register a new user
+userRouter.get('/',(req,res)=>{res.send("Welcome to home page!!!")})
 userRouter.post('/register',userController.register)
 userRouter.post('/login',userController.login)
 
