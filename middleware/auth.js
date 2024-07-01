@@ -3,9 +3,9 @@ const { JWT_SECRET } = require('../utils/config')
 const auth = {
     verifyToken : (request,response,next)=>{
         try{
-            // get the token from request cookies
+            // get the token from request headers
             const token = request.headers.token
-
+            // console.log(token)
             // if the token doesn't exists, return an error
             if(!token){
                 return response.status(401).json({message : "Unauthorized"})

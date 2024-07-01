@@ -74,12 +74,12 @@ const userController = {
             },config.JWT_SECRET)
 
             // set a cookie with token
-            response.cookie('token',token,{
-                // httpOnly : true,
-                // sameSite : 'none',
-                expires : new Date(Date.now() + 24 * 60 * 60 * 1000), //24 hrs from now
-                // secure :true //enable 
-            })
+            // response.cookie('token',token,{
+            //     // httpOnly : true,
+            //     // sameSite : 'none',
+            //     expires : new Date(Date.now() + 24 * 60 * 60 * 1000), //24 hrs from now
+            //     // secure :true //enable 
+            // })
 
             // return the response 
             response.json({message : "Login Successful" , token})
