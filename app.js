@@ -12,8 +12,7 @@ const app = express()
 
 //enable all cors requests
 app.use(cors({
-    // origin : 'http://localhost:5174',//allow all origins
-    origin : 'https://recipesharingappn.netlify.app',
+    origin : '*',//allow all origins
     credentials:true
 })) 
 
