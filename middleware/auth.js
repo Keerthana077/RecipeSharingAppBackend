@@ -5,6 +5,7 @@ const auth = {
         try{
             // get the token from request cookies
             const token = request.cookies.token
+            console.log(request.cookies)
 
             // if the token doesn't exists, return an error
             if(!token){
