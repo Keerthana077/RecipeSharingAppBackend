@@ -4,8 +4,7 @@ const auth = {
     verifyToken : (request,response,next)=>{
         try{
             // get the token from request cookies
-            const token = request.cookies.token
-            console.log(request.cookies)
+            const token = request.headers.token
 
             // if the token doesn't exists, return an error
             if(!token){
