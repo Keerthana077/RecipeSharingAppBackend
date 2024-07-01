@@ -13,7 +13,7 @@ const app = express()
 //enable all cors requests
 app.use(cors({
     origin : '*',//allow all origins
-    credentials:false
+    // credentials:true
 })) 
 
 // use cookie parser
